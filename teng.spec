@@ -15,6 +15,7 @@ Source0:	teng.tar.gz
 BuildRequires:	libtool
 BuildRequires:	flex
 BuildRequires:	bison
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Teng is a general purpose templating engine writen in C++ (i.e. library). It is
