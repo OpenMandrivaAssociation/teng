@@ -1,4 +1,4 @@
-%define	snap 20071026
+%define	snap 20071219
 
 %define	major 2
 %define	libname %mklibname %{name} %major
@@ -38,9 +38,10 @@ This package contains the shared Teng libraries.
 %package -n	%{develname}
 Summary:	Development files from Teng
 Group:		Development/C++
+Requires:	%{libname} = %{version}
 Provides:	%{name}-devel = %{version}-%{release}
 Provides:	lib%{name}-devel = %{version}-%{release}
-Conflicts:	%{mklibname teng 1 -d}
+Obsoletes:	%{mklibname teng 1 -d}
 
 %description -n	%{develname}
 Development files from Teng.
