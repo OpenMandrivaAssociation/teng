@@ -1,4 +1,4 @@
-%define	snap 20071219
+%define	snap 20080222
 
 %define	major 2
 %define	libname %mklibname %{name} %major
@@ -6,16 +6,17 @@
 
 Summary:	Templating engine writen in C++
 Name:		teng
-Version:	2.0.1
+Version:	2.0.4
 Release:	%mkrel 0.%{snap}.1
 License:	LGPL
 Group:		System/Libraries
 URL:		http://teng.sourceforge.net/
 Source0:	teng.tar.gz
+Patch0:		teng-gcc43.diff
 BuildRequires:	libtool
 BuildRequires:	flex
 BuildRequires:	bison
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Teng is a general purpose templating engine writen in C++ (i.e. library). It is
@@ -49,6 +50,15 @@ Development files from Teng.
 %prep
 
 %setup -q -n %{name}
+%patch0 -p1
+
+find . -type d -perm 0700 -exec chmod 755 {} \;
+find . -type f -perm 0555 -exec chmod 755 {} \;
+find . -type f -perm 0444 -exec chmod 644 {} \;
+
+for i in `find . -type d -name CVS` `find . -type f -name .cvs\*` `find . -type f -name .#\*`; do
+    if [ -e "$i" ]; then rm -rf $i; fi >&/dev/null
+done
 
 %build
 sh ./bootstrap.sh
