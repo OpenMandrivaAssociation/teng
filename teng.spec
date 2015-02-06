@@ -5,7 +5,7 @@
 Summary:	Templating engine writen in C++
 Name:		teng
 Version:	2.1.1
-Release:	1
+Release:	2
 License:	LGPL
 Group:		System/Libraries
 URL:		http://teng.sourceforge.net/
