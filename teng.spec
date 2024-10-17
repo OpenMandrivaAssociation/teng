@@ -8,7 +8,7 @@ Version:	2.1.1
 Release:	2
 License:	LGPL
 Group:		System/Libraries
-URL:		http://teng.sourceforge.net/
+URL:		https://teng.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/teng/teng-%{version}.tar.gz
 BuildRequires:	autoconf automake libtool
 BuildRequires:	flex
