@@ -10,6 +10,8 @@ License:	LGPL
 Group:		System/Libraries
 URL:		https://teng.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/teng/teng-%{version}.tar.gz
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	autoconf automake libtool
 BuildRequires:	flex
 BuildRequires:	bison
